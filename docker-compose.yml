@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  # Start the web-app container
+  express-app:
+    container_name: express-app
+    image: ilyamunaev/express-app:latest
+    ports:
+      - "8080:8080"
+
+  # Automatically update the web-app container
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60
