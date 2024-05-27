@@ -4,7 +4,7 @@ services:
   # Start the web-app container
   express-app:
     container_name: express-app
-    image: ilyamunaev/express-app:latest
+    image: ilyamunaev/express-app
     ports:
       - "8080:8080"
 
